@@ -19,20 +19,26 @@ cd Secrets/
 npm install
 ```
 3. Set up environment variables
-```bash
-PORT=3000  
-DATABASE_URL=  
-SESSION_SECRET=  
-GOOGLE_CLIENT_ID=  
-GOOGLE_CLIENT_SECRET=  
-GITHUB_CLIENT_ID=  
-GITHUB_CLIENT_SECRET=
+```env
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+SESSION_SECRET=
+PG_USER=
+PG_HOST=
+PG_DATABASE=
+PG_PASSWORD=
+PG_PORT=
 ```
 4. Set up the database
 ```sql
-
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY UNIQUE,
+    email VARCHAR(1000) UNIQUE NOT NULL,
+    password VARCHAR(1000),
+    secret TEXT
+);
 ```
 5. Start the server
 ```bash
-npm start
+node ./index.js
 ```
