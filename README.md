@@ -18,7 +18,7 @@ cd Secrets/
 ```bash
 npm install
 ```
-3. Set up environment variables
+3. Set up the .env file
 ```env
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
